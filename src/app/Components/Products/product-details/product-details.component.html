@@ -1,0 +1,36 @@
+<div class="container p-3">
+  <div class="row align-items-center">
+    <div class="col-md-3">
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let slide of productDetails?.images">
+        <ng-template carouselSlide >
+          <img [src]="slide" alt="clothes" class="w-100">
+        </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+    </div>
+    <div class="col-md-9">
+      <h1>{{productDetails?.category?.name}}</h1>
+      <p>{{productDetails?.description | seemore: 60}}</p>
+      <p class="d-flex justify-content-between">
+          <span> {{productDetails?.price}}EGP</span>
+          <span>
+            <i [ngClass]=" (productDetails?.ratingsAverage >=num )? 'starColor': 'transColor' "
+            *ngFor="let num of [1,2,3,4,5]"
+            class="fa-solid fa-star"></i>
+          <span>
+            {{ productDetails?.ratingsAverage }}
+          </span>
+        </span>
+      </p>
+      <p class="d-flex justify-content-between">
+        <a (click)="addToCart(productDetails._id)" class="btn Add-btn text-center"> <i class="fa-solid fa-plus"></i> Add to cart</a>
+        <a ><i *ngIf="!wishListData.includes($any(productDetails._id))" (click)="addFavourite(productDetails._id)" class="fa-regular fa-heart heart "></i></a>
+
+          <i *ngIf="wishListData.includes($any(productDetails._id))" (click)="removeFavourite(productDetails._id)" class="fa-solid fa-heart-circle-minus heart"></i>
+
+      </p>
+    </div>
+  </div>
+</div>

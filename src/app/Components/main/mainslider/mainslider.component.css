@@ -1,0 +1,27 @@
+.myImages{
+  height: 80px;
+}
+/* .row.carousel{
+  height: 5% !important;
+  width: 60%;
+  padding-block: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(35%);
+} */
+.container{
+  margin-top: 5rem;
+}
+img.img-right{
+  object-position: right;
+}
+
+/*Second slider*/
+img.myImg{
+  width: 100% !important;
+  height: 210px !important;
+  object-fit: cover;
+  object-position: center;
+}
+

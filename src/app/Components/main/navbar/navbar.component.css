@@ -1,0 +1,60 @@
+svg
+{
+  width: 42px;
+  height: 42px;
+  color: #2c2c !important;
+  font-size: 42px;
+  margin-left: 5px;
+}
+
+.navbar-brand{
+  color: rgba(11, 11, 11, 0.8);
+}
+.active
+{
+  background-color: var(--main-color);
+  color:white;
+  border-radius: 5px;
+
+}
+
+.out{
+  cursor: pointer !important;
+  width: fit-content !important;
+  position: relative;
+}
+.out a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+li{
+  margin-bottom: 0.3rem;
+}
+.nav-link {
+  display: inline;
+   padding: 0.3rem;
+}
+/* .dropdown-menu ul{
+  width: 0.5rem !important;
+} */
+.dropdown-menu.show ul{
+  width:50% !important;
+  height: 2rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .navbar-expand-lg .navbar-nav .dropdown-menu ul{
+  position: absolute;
+  left: 0;
+  width: 5px !important;
+} */
+
+.count{
+  position: absolute;
+  top: 0%;
+  right: 0;
+  background-color: rgba(12, 126, 12, 0.8);
+  padding: 0.2rem;
+}

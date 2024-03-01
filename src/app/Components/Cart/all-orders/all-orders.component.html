@@ -1,0 +1,32 @@
+<div class="container p-5 bg-light shadow rounded rounded-3">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>All Orders</h1>
+    </div>
+    <div class="col-md-12 p-2  border border-1 rounded rounded-3"  *ngFor="let order of orders;let i =index">
+      <h3 class="h6">Order :{{i+1}}</h3>
+      <div class="row py-3 px-5"  *ngFor="let cart of order.cartItems">
+        <div class="col-md-1">
+          <img [src]="cart.product.imageCover" alt="product" class="w-100">
+        </div>
+        <div class="col-md d-flex justify-content-between border-bottom">
+          <div>
+            <h3 class="h6">{{cart.product.title}}</h3>
+            <p>Count :{{cart.count}}</p>
+            <p class="category">Price: {{cart.price | currency : 'EGP'}} </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center align-items-center" >
+          <div class="border border-1 rounded rounded-3 p-1 mb-2 w-25 text-center" >
+            <p>IsDelivered: <span class="{{order.isDelivered === 'false' ? 'bg-danger' : 'bg-success'}} p-1 text-light rounded rounded-3">{{order.isDelivered === 'false' ? 'No' : 'Yes'}}</span> </p>
+            <p>IsPaid: <span  class="{{order.isPaid === 'false' ? 'bg-danger' : 'bg-success'}} p-1 text-light rounded rounded-3">{{order.isPaid === 'false' ? 'No' : 'Yes'}}</span></p>
+            <p>Payment Method Type: <span>{{order.paymentMethodType}}</span></p>
+            <p>Total order price : <span> {{order.totalOrderPrice}}  EGP</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

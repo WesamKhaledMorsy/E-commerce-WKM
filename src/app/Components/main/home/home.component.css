@@ -1,0 +1,26 @@
+.myImages{
+  height: 80px;
+}
+.row.carousel{
+  height: 5% !important;
+  width: 60%;
+  padding-block: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(35%);
+}
+
+img.myImg{
+  width: 100% !important;
+  height: 210px !important;
+}
+.owl-item {
+  width: 100px !important;
+}
+.transColor{
+  color: gray;
+}
+.starColor{
+  color: yellow;
+}

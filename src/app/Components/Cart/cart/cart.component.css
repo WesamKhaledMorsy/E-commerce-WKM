@@ -1,0 +1,6 @@
+.container{
+  margin-block:5rem ;
+  border: none;
+  border-radius: 15px;
+  min-height: 200px;
+}

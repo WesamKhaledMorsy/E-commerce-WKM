@@ -1,0 +1,44 @@
+<section class="mx-auto p-2 w-50 bg-light rounded rounded-3 shadow" >
+  <div class="container">
+    <h2 class="text-center">CheckOut Session</h2>
+    <form [formGroup]="orderForm" (ngSubmit)="handlePayment()">
+      <div class="row gx-5 gy-4">
+        <div class="col-md-12 my-2">
+          <div class="form-item">
+            <label for="datails">Details :</label>
+            <input
+              type="text"
+              placeholder="Details..."
+              id="details"
+              formControlName="details"
+              class="form-control"
+            />
+          </div>
+          <div class="col-md-12 my-2">
+            <label for="phone">Phone :</label>
+            <input
+              type="tel"
+              placeholder="phone..."
+              id="phone"
+              formControlName="phone"
+              class="form-control"
+            />
+          </div>
+          <div class="col-md-12 my-2">
+            <label for="city">City :</label>
+            <input
+              type="text"
+              placeholder="city..."
+              id="city"
+              formControlName="city"
+              class="form-control"
+            />
+          </div>
+          <div class="col-md-4 my-2">
+            <button type="submit" class="Add-btn py-2 text-light">CheckOut</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

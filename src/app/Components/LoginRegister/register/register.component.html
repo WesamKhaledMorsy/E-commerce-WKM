@@ -1,0 +1,89 @@
+<div class="container p-3 my-5">
+  <div class="row g-4 vh-100">
+    <div class="col-md-12">
+      <div class="text-center fst-italic py-2">
+        <h2>SIGN UP Form</h2>
+      </div>
+      <div class="col-md-12 alert alert-danger text-center" *ngIf="errorMessage">
+        <p>{{errorMessage}}</p>
+      </div>
+      <div class="col-md-12 alert alert-info text-center" *ngIf="SuccessfulMessage">
+        <p>{{SuccessfulMessage}}</p>
+      </div>
+
+
+    <form [formGroup]="SignUpForm" (ngSubmit)="handleSignUp()">
+      <label for="userName">Name</label>
+      <input type="text" formControlName="name" id="userName" class="form-control">
+      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('name')?.touched || clicked">
+        <p *ngIf='SignUpForm.get("name")?.getError("minlength")' class="alert alert-danger" >
+          Name must be at least 3 characters
+        </p>
+      <p class="alert alert-danger" *ngIf='SignUpForm.get("name")?.getError("required")'>
+          Name is Required
+        </p>
+        <p class="alert alert-danger" *ngIf='SignUpForm.get("name")?.getError("maxlength")'>
+          Name mustn't be greater than 15 characters and now the actual length {{SignUpForm.get("name")?.getError("maxlength").actualLength}}
+        </p>
+      </div>
+
+      <label for="userEmail">Email</label>
+      <input type="email" formControlName="email" id="userEmail" class="form-control" autocomplete="false">
+      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('email')?.touched || clicked">
+        <p *ngIf='SignUpForm.get("email")?.getError("email")' class="alert alert-danger" >
+        Email is Invalid
+        </p>
+      <p class="alert alert-danger" *ngIf='SignUpForm.get("email")?.getError("required")'>
+          Email is Required
+        </p>
+      </div>
+      <label for="userPassword">Password</label>
+      <input type="password" formControlName="password" id="userPassword" class="form-control" autocomplete="false">
+      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('password')?.touched || clicked">
+        <p *ngIf='SignUpForm.get("password")?.getError("pattern")' class="alert alert-danger" >
+          Password must contain at Least 8 characters
+          , Capital Characters ABCD
+          , Small Characters abcd
+          , Spacial Characters
+        </p>
+      <p class="alert alert-danger" *ngIf='SignUpForm.get("password")?.getError("required")'>
+          Password is Required
+        </p>
+      </div>
+
+      <label for="userRePassword">RePassword</label>
+      <input type="password" formControlName="rePassword" id="userRePassword" class="form-control" autocomplete="false">
+      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('rePassword')?.touched || clicked">
+        <p *ngIf='SignUpForm.get("rePassword")?.getError("pattern")' class="alert alert-danger" >
+          RePassword must contain at Least 8 characters
+          , Capital Characters ABCD
+          , Small Characters abcd
+          , Spacial Characters
+        </p>
+         <p class="alert alert-danger" *ngIf='SignUpForm.get("rePassword")?.getError("required")'>
+          rePassword is Required
+        </p>
+        <p class="alert alert-danger" *ngIf='SignUpForm.errors'>
+          Your password and RePassword are not the same!
+        </p>
+      </div>
+      <label for="userPhone">Phone</label>
+      <input type="text" formControlName="phone" id="userPhone" class="form-control" autocomplete="false">
+      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('phone')?.touched || clicked">
+        <p *ngIf='SignUpForm.get("phone")?.getError("pattern")' class="alert alert-danger" >
+          Phone Number must be egyptian number
+        </p>
+      <p class="alert alert-danger" *ngIf='SignUpForm.get("phone")?.getError("required")'>
+        Phone Number  is Required
+        </p>
+      </div>
+      <button type="submit" class="Add-btn" > <span *ngIf="!loading">Submit</span>
+        <i *ngIf="loading" class="fa-solid fa-spinner fa-spin fs-4"></i>
+      </button>
+
+  </form>
+  </div>
+  <!-- {{[repasswordMatchPassord]}} -->
+
+  </div>
+</div>

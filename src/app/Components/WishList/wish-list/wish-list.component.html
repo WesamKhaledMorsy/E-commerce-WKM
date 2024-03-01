@@ -1,0 +1,26 @@
+<div class="container p-3">
+  <div class="row g-4">
+    <div class="col-md-12">
+      <h2 class="text-center fst-italic fw-bold fs-1">Wish list</h2>
+    </div>
+    <div class="col-md-3" *ngFor="let product of products">
+      <div class="card product-card">
+        <img [src]="product.imageCover" class="card-img-top w-100" alt="product"  (click)="getProductByID(product._id)">
+        <div class="card-body">
+          <h2 class="h6 category"  (click)="getProductByID(product._id)">{{product.category.name}}</h2>
+          <h5 class="h6 card-title"  (click)="getProductByID(product._id)">{{product.title  }}</h5>
+          <!-- <p class="card-text">{{product.description.split(' ').splice(0,40).join(' ')}}</p> -->
+          <p class="card-text d-flex justify-content-between"  (click)="getProductByID(product._id)"><span>{{product.price | currency:'EGP':'symbol'}}</span>
+              <span><i  [ngClass]=" (product.ratingsAverage >=num )? 'starColor': 'transColor' "
+                *ngFor="let num of [1,2,3,4,5]" class="fa-solid fa-star"></i>
+                {{product.ratingsAverage}}
+              </span> </p>
+          <p class="card-text d-flex justify-content-end">
+            <i  (click)="removeFavourite(product._id)" class="fa-solid fa-heart-circle-minus heart"></i>
+          </p>
+          <a class="btn Add-btn text-center" (click)="addToCart(product._id)"> <i class="fa-solid fa-plus"></i> Add to cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

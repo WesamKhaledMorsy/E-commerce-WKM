@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --main-color:rgba(15, 169, 15, 0.767);
+  --rating-color:rgb(246, 246, 19);
+}
+.card-body{
+  position: relative;
+  overflow: hidden;
+}
+.card:hover a{
+  transform: translateY(0);
+}
+.card-body a{
+  width: 100%;
+  position: relative;
+  transform: translateY(150%);
+  transition: all 1s;
+}
+.product-card{
+  padding: 0.1rem;
+  transition: all 1s;
+}
+.product-card:hover{
+  border: solid 1px rgba(148, 229, 148, 0.867);
+  box-shadow: rgba(56, 201, 104, 0.734) 0px 8px 24px;
+}
+.category
+{
+  color: #2c2c;
+}
+.main-bg{
+  background-color: #2c2c;
+  border-radius: 10px;
+  border: none;
+  padding: 0.2rem .4rem;
+  margin-top: 0.5rem;
+}
+.Add-btn, .Add-btn:hover{
+  background-color: #2c2c;
+  border: none;
+  border-radius: 10px;
+  width: 100%;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.text
+{
+  color: rgba(120, 120, 120, 0.8);
+}
+.clear{
+  transition: all 500ms;
+}
+.clear:hover{
+  background-color: rgb(216, 66, 66);
+  color: #fff !important;
+}
+.heart{
+  font-size: 25px;
+  transition: all 500ms;
+}
+.heart:hover{
+  font-size: 28px;
+  color: rgb(158, 1, 1);
+}

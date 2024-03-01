@@ -1,0 +1,51 @@
+<div class="container p-3 bg-light" *ngIf="userCart?.numOfCartItems > 0; else msg">
+  <h2 class="text-center">Shop Cart</h2>
+  <div class="d-flex justify-content-between ">
+    <p class="px-5 category">total price : {{userCart?.data?.totalCartPrice}}</p>
+    <p (click)="deleteCart()" class="clear text-danger cursor-pointer py-1 px-2 me-3 border border-1 rounded-3 border-danger "><i class="fa-solid fa-trash"></i> Clear Cart</p>
+  </div>
+    <div class="row p-5 border-bottom" *ngFor="let pr of userProducts">
+      <div class="col-md-1">
+        <img [src]="pr.product.imageCover" class="w-100" [alt]="pr?.product.title">
+      </div>
+      <div class="col-md d-flex justify-content-between">
+        <div>
+          <h3 class="h6">{{pr?.product.title| seemoreHome:10 }}</h3>
+          <p class="category">Price: {{pr.price | currency : 'EGP'}}</p>
+          <span class="text-danger cursor-pointer p-2 border border-1 rounded-3 border-danger" (click)="removeItem(pr.product._id)">
+            <i class="fa-solid fa-trash"></i>
+            Remove
+          </span>
+        </div>
+        <div>
+          <span class="me-2 cursor-pointer text-success p-2 border border-1 rounded-3 border-success" (click)="updateProductQuantity(pr.product._id,pr.count + 1)">
+              <i class="fa-solid fa-plus"></i>
+            </span>
+          <span>{{pr?.count}}</span>
+          <span class="mx-2 cursor-pointer text-success p-2 border border-1 rounded-3 border-success" id="decrement" (click)="updateProductQuantity(pr.product._id,pr.count - 1)">
+            <i class="fa-solid fa-minus"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="main-bg text-light" [routerLink]="['/payment',userCart.data._id]">Online Payment <img src="./assets/images/visa.svg" alt="visa"> </button>
+      </div>
+    </div>
+</div>
+<div class="container w-50">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="Add-btn py-2" (click)="allUserOrders()">My Orders</button>
+    </div>
+  </div>
+</div>
+<ng-template #msg>
+  <div class="container p-3">
+    <div class="d-flex align-items-center justify-content-center" >
+      <p class="fs-1 fst-italic text-center">Your Cart Is Empty...</p>
+    </div>
+  </div>
+</ng-template>
+
