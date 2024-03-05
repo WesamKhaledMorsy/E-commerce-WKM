@@ -1,7 +1,7 @@
-<div class="container p-3 my-5">
-  <div class="row g-4 vh-100">
-    <div class="col-md-12">
-      <div class="text-center fst-italic py-2">
+<div class="container">
+  <div class="row g-4 ">
+    <div class="col-md-12 my-5">
+      <div class="text-center fst-italic py-1">
         <h2>SIGN UP Form</h2>
       </div>
       <div class="col-md-12 alert alert-danger text-center" *ngIf="errorMessage">
@@ -15,7 +15,7 @@
     <form [formGroup]="SignUpForm" (ngSubmit)="handleSignUp()">
       <label for="userName">Name</label>
       <input type="text" formControlName="name" id="userName" class="form-control">
-      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('name')?.touched || clicked">
+      <div class="py-1 fst-italic" *ngIf="SignUpForm.get('name')?.touched || clicked">
         <p *ngIf='SignUpForm.get("name")?.getError("minlength")' class="alert alert-danger" >
           Name must be at least 3 characters
         </p>
@@ -29,7 +29,7 @@
 
       <label for="userEmail">Email</label>
       <input type="email" formControlName="email" id="userEmail" class="form-control" autocomplete="false">
-      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('email')?.touched || clicked">
+      <div class="py-1 fst-italic" *ngIf="SignUpForm.get('email')?.touched || clicked">
         <p *ngIf='SignUpForm.get("email")?.getError("email")' class="alert alert-danger" >
         Email is Invalid
         </p>
@@ -39,7 +39,7 @@
       </div>
       <label for="userPassword">Password</label>
       <input type="password" formControlName="password" id="userPassword" class="form-control" autocomplete="false">
-      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('password')?.touched || clicked">
+      <div class="py-1 fst-italic" *ngIf="SignUpForm.get('password')?.touched || clicked">
         <p *ngIf='SignUpForm.get("password")?.getError("pattern")' class="alert alert-danger" >
           Password must contain at Least 8 characters
           , Capital Characters ABCD
@@ -53,7 +53,7 @@
 
       <label for="userRePassword">RePassword</label>
       <input type="password" formControlName="rePassword" id="userRePassword" class="form-control" autocomplete="false">
-      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('rePassword')?.touched || clicked">
+      <div class="py-1 fst-italic" *ngIf="SignUpForm.get('rePassword')?.touched || clicked">
         <p *ngIf='SignUpForm.get("rePassword")?.getError("pattern")' class="alert alert-danger" >
           RePassword must contain at Least 8 characters
           , Capital Characters ABCD
@@ -69,7 +69,7 @@
       </div>
       <label for="userPhone">Phone</label>
       <input type="text" formControlName="phone" id="userPhone" class="form-control" autocomplete="false">
-      <div class="py-2 fst-italic" *ngIf="SignUpForm.get('phone')?.touched || clicked">
+      <div class="py-1 fst-italic" *ngIf="SignUpForm.get('phone')?.touched || clicked">
         <p *ngIf='SignUpForm.get("phone")?.getError("pattern")' class="alert alert-danger" >
           Phone Number must be egyptian number
         </p>
@@ -77,13 +77,13 @@
         Phone Number  is Required
         </p>
       </div>
-      <button type="submit" class="Add-btn" [disabled]="SignUpForm.invalid" > <span *ngIf="!loading">Submit</span>
+      <button type="submit" class="Add-btn my-2" [disabled]="SignUpForm.invalid" > <span *ngIf="!loading">Submit</span>
         <i *ngIf="loading" class="fa-solid fa-spinner fa-spin fs-4"></i>
       </button>
 
   </form>
   </div>
-  <!-- {{[repasswordMatchPassord]}} -->
+
 
   </div>
 </div>

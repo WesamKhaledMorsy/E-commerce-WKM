@@ -38,9 +38,8 @@
             {{ product.category?.name }}
           </h2>
           <h5 class="h6 card-title" (click)="getProductByID(product._id)">
-            {{ product.title | seemore : 4 }}
+            {{ product.title | seemore : 3 }}
           </h5>
-          <!-- <p class="card-text">{{product.description.split(' ').splice(0,40).join(' ')}}</p> -->
           <p
             class="card-text d-flex justify-content-between"
             (click)="getProductByID(product._id)"
@@ -70,15 +69,11 @@
       id="productPagination"
       (pageChange)="pageChanged($event)"
       (pageBoundsCorrection)="pageChanged($event)"
-      [maxSize]="9"
-      [directionLinks]="true"
-      [autoHide]="true"
-      [responsive]="true"
+      [maxSize]="50"
+
       previousLabel="Previous"
       nextLabel="Next"
-      screenReaderPaginationLabel="Pagination"
-      screenReaderPageLabel="page"
-      screenReaderCurrentLabel="You're on page"
+
       class="my-pagination"
     ></pagination-controls>
   </div>

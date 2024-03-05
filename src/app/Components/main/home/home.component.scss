@@ -1,3 +1,4 @@
+@import '../../../../styles.scss';
 .myImages{
   height: 80px;
 }
@@ -22,5 +23,5 @@ img.myImg{
   color: gray;
 }
 .starColor{
-  color: yellow;
+  color: $rating-color;
 }

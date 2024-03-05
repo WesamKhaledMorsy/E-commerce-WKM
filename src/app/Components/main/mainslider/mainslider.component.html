@@ -1,6 +1,6 @@
-<div class="container py-3 mt-5">
-  <div class="row g-0 carousel">
-    <div class="col-md-9" >
+<div class="container py-3 ">
+  <div class="row g-0 carousel ">
+    <div class="col-md-9 " >
         <owl-carousel-o [options]="customOptions">
           <ng-template carouselSlide *ngFor="let img of imagesGroup1">
             <img class="w-100 object-fit-cover img-right" height="400" [src]="img.src" alt="bag">
@@ -16,11 +16,11 @@
 
   <div class="container-fluid w-100">
     <div class="row w-100">
-      <div class="col-md-12 w-100">
+      <div class="col-md-12 w-100 text-center ">
         <owl-carousel-o [options]="customOptions2" class="secondCarousel">
           <ng-template carouselSlide *ngFor="let category of categories">
             <img class="myImg" [src]="category.image" [alt]="category.name" [title]="category.name">
-            <p>{{category.name}}</p>
+            <p class="category fs-6 fst-italic my-1 fw-light">{{category.name}}</p>
           </ng-template>
         </owl-carousel-o>
       </div>

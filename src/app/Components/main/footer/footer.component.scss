@@ -1,22 +1,24 @@
-.container-fluid
-{
-  background-color: #F0F3F2;
+$whiteColor:#fff;
+$lightColor:#bebebe;
+
+.container-fluid {
+  background-color: $whiteColor;
+  color: $lightColor;
+  .row{
+    display: flex;
+    align-items: center;
+      p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding-top: 0.5rem ;
+        margin-bottom: 0;
+      }
+      input{
+        width: 80%;
+      }
+  }
+
 }
-.container-fluid .row{
-  display: flex;
-  align-items: center;
-  /* justify-content: center; */
-}
-// .container{
-//   padding: 1rem !important;
-// }
-p{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.2rem;
-  font-weight: 400;
-  padding-block:0.6rem ;
-  margin-bottom: 0;
-}
-input{
-  width: 80%;
-}
+
+

@@ -1,4 +1,4 @@
-<div class="container p-3">
+<div class="container p-3" *ngIf="products.length > 0; else msg">
   <div class="row g-4">
     <div class="col-md-12">
       <h2 class="text-center fst-italic fw-bold fs-1">Wish list</h2>
@@ -8,7 +8,7 @@
         <img [src]="product.imageCover" class="card-img-top w-100" alt="product"  (click)="getProductByID(product._id)">
         <div class="card-body">
           <h2 class="h6 category"  (click)="getProductByID(product._id)">{{product.category.name}}</h2>
-          <h5 class="h6 card-title"  (click)="getProductByID(product._id)">{{product.title  }}</h5>
+          <h5 class="h6 card-title"  (click)="getProductByID(product._id)">{{product.title |seeMoreInWishList:3 }}</h5>
           <!-- <p class="card-text">{{product.description.split(' ').splice(0,40).join(' ')}}</p> -->
           <p class="card-text d-flex justify-content-between"  (click)="getProductByID(product._id)"><span>{{product.price | currency:'EGP':'symbol'}}</span>
               <span><i  [ngClass]=" (product.ratingsAverage >=num )? 'starColor': 'transColor' "
@@ -24,3 +24,10 @@
     </div>
   </div>
   </div>
+  <ng-template #msg>
+    <div class="container p-3">
+      <div class="d-flex align-items-center justify-content-center" >
+        <p class="fs-1 fst-italic text-center">Your Wish List Is Empty...</p>
+      </div>
+    </div>
+  </ng-template>

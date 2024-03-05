@@ -17,7 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ProductListComponent,
     ProductDetailsComponent,
     SearchPipe,
-    SeemorePipe
+    SeemorePipe,
   ],
   imports: [
     CommonModule,
