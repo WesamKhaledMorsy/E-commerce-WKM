@@ -4,7 +4,7 @@
       <h1>Brands</h1>
     </div> -->
 
-    <div class="col-md-3" *ngFor="let brand of brands | paginate: { id: 'brandsPagination',
+    <div class="col-md-2" *ngFor="let brand of brands | paginate: { id: 'brandsPagination',
     itemsPerPage: pageLimit,
     currentPage:pageNumber,
     totalItems:allBrands } ">
@@ -28,6 +28,6 @@
     screenReaderPageLabel="page"
     screenReaderCurrentLabel="You're on page"
     class="my-pagination"></pagination-controls>
-    
+
   </div>
   </div>

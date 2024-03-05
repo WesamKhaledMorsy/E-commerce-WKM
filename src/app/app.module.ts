@@ -58,7 +58,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     ToastrModule.forRoot(), // ToastrModule added
     NgxSpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

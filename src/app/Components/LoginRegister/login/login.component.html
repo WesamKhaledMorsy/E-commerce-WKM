@@ -36,7 +36,7 @@
       </p>
     </div>
     <div class="d-flex justify-content-between my-3">
-      <button type="submit" class="Add-btn w-25" > <span *ngIf="!loading">Login</span>
+      <button type="submit" class="Add-btn w-25" [disabled]="SignInForm.invalid" > <span *ngIf="!loading">Login</span>
         <i *ngIf="loading" class="fa-solid fa-spinner fa-spin fs-4"></i>
       </button>
       <a routerLink="/forgot"> Forget Password</a>

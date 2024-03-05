@@ -1,0 +1,116 @@
+<div class="container my-5 py-5 ">
+  <div class="row">
+    <div class="col-md-12 justify-content-start">
+      <!-- Button trigger modal -->
+      <button  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn Add-btn my-2 w-25">Add Address</button>
+    </div>
+    <div class="col-md-12">
+      <table class="table table-striped table-dark ">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Details</th>
+            <th scope="col">Phone</th>
+            <th scope="col">City</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let address of userAddresses" class="text-center">
+            <th scope="row">1</th>
+            <td>{{address.name}}</td>
+            <td>{{address.details}}</td>
+            <td>{{address.phone}}</td>
+            <td>{{address.city}}</td>
+            <td (click)="deleteAddress(address._id)"> <i class="fa-solid fa-trash-can"></i>  </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Address</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" #closeModal></button>
+      </div>
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>Add New Addresses</h1>
+            </div>
+            <form [formGroup]="userAdressForm" (ngSubmit)="handleUserForm(userAdressForm)">
+              <div class="col-md-12">
+                <label for="name">Name:</label>
+                <input type="text" id="name" formControlName="name" class="form-control">
+                <div class="py-2 fst-italic" *ngIf="userAdressForm.get('name')?.touched || clicked">
+                  <p *ngIf='userAdressForm.get("name")?.getError("minlength")' class="alert alert-danger" >
+                    User name at least 3 characters.
+                  </p>
+                  <p *ngIf='userAdressForm.get("name")?.getError("maxlength")' class="alert alert-danger" >
+                    User name max length 15 char.
+                  </p>
+                 <p class="alert alert-danger" *ngIf='userAdressForm.get("name")?.getError("required")'>
+                    user name is Required
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="details">Address Details :</label>
+                <input type="text" id="details" formControlName="details" class="form-control">
+                <div class="py-2 fst-italic" *ngIf="userAdressForm.get('details')?.touched || clicked">
+                  <p *ngIf='userAdressForm.get("details")?.getError("minlength")' class="alert alert-danger" >
+                    Details at least 3 characters.
+                  </p>
+                 <p class="alert alert-danger" *ngIf='userAdressForm.get("details")?.getError("required")'>
+                    Details is Required
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="phone">Phone :</label>
+                <input type="tel" id="phone" formControlName="phone" class="form-control">
+                <div class="py-2 fst-italic" *ngIf="userAdressForm.get('phone')?.touched || clicked">
+                  <p *ngIf='userAdressForm.get("phone")?.getError("pattern")' class="alert alert-danger" >
+                    Phone is invalid
+                  </p>
+                 <p class="alert alert-danger" *ngIf='userAdressForm.get("phone")?.getError("required")'>
+                   Phone is Required
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="city">City :</label>
+                <input type="text" id="city" formControlName="city" class="form-control">
+                <div class="py-2 fst-italic" *ngIf="userAdressForm.get('city')?.touched || clicked">
+                  <p *ngIf='userAdressForm.get("city")?.getError("minlength")' class="alert alert-danger" >
+                    City at least 3 characters.
+                  </p>
+                 <p class="alert alert-danger" *ngIf='userAdressForm.get("city")?.getError("required")'>
+                    City is Required
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="btn Add-btn" [disabled]="userAdressForm.invalid">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>

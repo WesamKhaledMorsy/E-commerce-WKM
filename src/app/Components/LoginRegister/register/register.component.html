@@ -77,7 +77,7 @@
         Phone Number  is Required
         </p>
       </div>
-      <button type="submit" class="Add-btn" > <span *ngIf="!loading">Submit</span>
+      <button type="submit" class="Add-btn" [disabled]="SignUpForm.invalid" > <span *ngIf="!loading">Submit</span>
         <i *ngIf="loading" class="fa-solid fa-spinner fa-spin fs-4"></i>
       </button>
 

@@ -5,4 +5,5 @@ export interface User {
   rePassword: string;
   phone: string;
   token:string;
+  details ?: string;  
 }

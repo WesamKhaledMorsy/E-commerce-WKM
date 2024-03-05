@@ -9,7 +9,8 @@ export const Apis={
   },User:{
     forgetPass:'/api/v1/auth/forgotPasswords',
     resetCode:'/api/v1/auth/verifyResetCode',
-    resetPassword:'/api/v1/auth/resetPassword'
+    resetPassword:'/api/v1/auth/resetPassword',
+    UpdateLoggedUserData:'/api/v1/users/updateMe/'
   },
   Products:{
     getAllProduct:'/api/v1/products',
@@ -28,6 +29,8 @@ export const Apis={
     brands:'/api/v1/brands/'
   },WishList:{
     wish:'/api/v1/wishlist/'
+  },Address: {
+    address:'/api/v1/addresses/'
   }
 
 }

@@ -1,3 +1,6 @@
 .container{
   margin-top: 5rem;
 }
+img{
+  filter: drop-shadow(-15px 5px 5px rgb(74, 79, 122));
+}

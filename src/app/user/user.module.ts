@@ -6,11 +6,14 @@ import { ForgetPasswordComponent } from './ForgetPassword/ForgetPassword.compone
 import { ToastrModule } from 'ngx-toastr';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { UserDataComponent } from './UserData/user-data.component';
+import { UserAddressComponent } from './user-address/user-address.component';
+
 
 @NgModule({
   declarations: [
     ForgetPasswordComponent,
-    UserDataComponent
+    UserDataComponent,
+    UserAddressComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +21,8 @@ import { UserDataComponent } from './UserData/user-data.component';
     FormsModule,
     ToastrModule.forRoot(),
     CarouselModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ]
 })
 export class UserModule { }
