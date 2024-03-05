@@ -26,10 +26,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Packages Should install
-# For Loading screen use ngx-spinner # https://www.npmjs.com/package/ngx-spinner
-# For pagination use ngx-pagination # https://www.npmjs.com/package/ngx-pagination
-# For making carousel use ngx-owl-carousel-o  # https://www.npmjs.com/package/ngx-owl-carousel-o
-# For alerts after any action use ngx-toastr # https://www.npmjs.com/package/ngx-toastr
-# For icons use fortawesome # [npm i @fortawesome/angular-fontawesome](https://www.npmjs.com/package/@fortawesome/angular-fontawesome)https://www.npmjs.com/package/@fortawesome/angular-fontawesome
+# Packages Should install
+### For Loading screen use ngx-spinner ### https://www.npmjs.com/package/ngx-spinner
+### For pagination use ngx-pagination ### https://www.npmjs.com/package/ngx-pagination
+### For making carousel use ngx-owl-carousel-o  ### https://www.npmjs.com/package/ngx-owl-carousel-o
+### For alerts after any action use ngx-toastr ### https://www.npmjs.com/package/ngx-toastr
+### For icons use fortawesome ### [npm i @fortawesome/angular-fontawesome](https://www.npmjs.com/package/@fortawesome/angular-fontawesome)https://www.npmjs.com/package/@fortawesome/angular-fontawesome
 
