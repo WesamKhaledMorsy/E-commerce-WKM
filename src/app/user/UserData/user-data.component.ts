@@ -9,7 +9,7 @@ import { User } from 'src/app/Models/user';
 @Component({
   selector: 'app-user',
   templateUrl: './user-data.component.html',
-  styleUrls: ['./user-data.component.css']
+  styleUrls: ['./user-data.component.scss']
 })
 export class UserDataComponent implements OnInit {
   loading:boolean=false;

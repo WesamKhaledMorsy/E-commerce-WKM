@@ -5,7 +5,7 @@ import { BrandService } from '../brand.service';
 @Component({
   selector: 'app-brands',
   templateUrl: './brands.component.html',
-  styleUrls: ['./brands.component.css']
+  styleUrls: ['./brands.component.scss']
 })
 export class BrandsComponent {
   brands: Brands []=[];

@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-brand-details',
   templateUrl: './brand-details.component.html',
-  styleUrls: ['./brand-details.component.css']
+  styleUrls: ['./brand-details.component.scss']
 })
 export class BrandDetailsComponent {
   brandDetails :any;

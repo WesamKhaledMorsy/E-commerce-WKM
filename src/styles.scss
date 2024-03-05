@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --main-color:rgba(15, 169, 15, 0.767);
-  --rating-color:rgb(246, 246, 19);
-}
+
+  $font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  $main-color:rgba(15, 169, 15, 0.767);
+  $rating-color:rgb(246, 246, 19);
+
+  .container{
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
+
 .card-body{
   position: relative;
   overflow: hidden;
@@ -37,10 +42,17 @@
   margin-top: 0.5rem;
 }
 .Add-btn, .Add-btn:hover{
-  background-color: #2c2c;
-  border: none;
-  border-radius: 10px;
-  width: 100%;
+  // background-color: #2c2c;
+  // border: none;
+  // border-radius: 10px;
+  // width: 100%;
+
+  background-color: $main-color;
+    border: none;
+    // width: 80%;
+    border-radius: 10px;
+    color: #fff;
+    padding-block: 0.3rem;
 }
 .cursor-pointer{
   cursor: pointer;

@@ -8,7 +8,7 @@ import { CartService } from '../cart.service';
 @Component({
   selector: 'app-all-orders',
   templateUrl: './all-orders.component.html',
-  styleUrls: ['./all-orders.component.css'],
+  styleUrls: ['./all-orders.component.scss'],
   standalone:true,
   imports:[CommonModule]
 })

@@ -1,3 +1,4 @@
+@import '../../../../styles.scss';
 svg
 {
   width: 42px;
@@ -12,10 +13,9 @@ svg
 }
 .active
 {
-  background-color: var(--main-color);
+  background-color: $main-color;
   color:white;
   border-radius: 5px;
-
 }
 
 .out{

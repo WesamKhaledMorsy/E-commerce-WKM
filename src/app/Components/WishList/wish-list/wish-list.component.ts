@@ -14,7 +14,7 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 @Component({
   selector: 'app-wish-list',
   templateUrl: './wish-list.component.html',
-  styleUrls: ['./wish-list.component.css'],
+  styleUrls: ['./wish-list.component.scss'],
   standalone: true,
   imports:[CommonModule,RouterModule]
 })

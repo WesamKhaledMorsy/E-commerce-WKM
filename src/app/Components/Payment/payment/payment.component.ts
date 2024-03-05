@@ -8,7 +8,7 @@ import { ShippingAddress } from 'src/app/Models/ShippingAddress';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.css']
+  styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
   cartID:string|null ='';

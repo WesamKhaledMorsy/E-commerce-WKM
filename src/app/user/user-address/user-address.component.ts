@@ -8,7 +8,7 @@ import { User } from 'src/app/Models/user';
 @Component({
   selector: 'app-user-address',
   templateUrl: './user-address.component.html',
-  styleUrls: ['./user-address.component.css']
+  styleUrls: ['./user-address.component.scss']
 })
 export class UserAddressComponent implements OnInit{
   userAddresses:ShippingAddress[]=[];

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-ForgetPassword',
   templateUrl: './ForgetPassword.component.html',
-  styleUrls: ['./ForgetPassword.component.css']
+  styleUrls: ['./ForgetPassword.component.scss']
 })
 export class ForgetPasswordComponent implements OnInit {
   step1 :boolean =true;

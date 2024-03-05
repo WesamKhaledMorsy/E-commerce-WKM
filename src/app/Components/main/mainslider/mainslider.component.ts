@@ -6,7 +6,7 @@ import { CategoryService } from '../../Categories/category.service';
 @Component({
   selector: 'app-mainslider',
   templateUrl: './mainslider.component.html',
-  styleUrls: ['./mainslider.component.css']
+  styleUrls: ['./mainslider.component.scss']
 })
 export class MainsliderComponent {
   categories: Category []=[];
@@ -29,11 +29,11 @@ export class MainsliderComponent {
   }
   customOptions2: OwlOptions = {
     loop: true,
-    mouseDrag: false,
+    mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
     dots: true,
-    navSpeed: 500,
+    navSpeed: 700,
     navText: ['', ''],
     responsive: {
       0: {
