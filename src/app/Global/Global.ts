@@ -21,7 +21,7 @@ export const Apis={
     Cart:'/api/v1/cart/',
   },Payment:{
     pay:'/api/v1/orders/checkout-session/',
-    redirctUrl:'?url=http://localhost:4200'
+    redirctUrl:'http://localhost:4200'
   },Orders:{
     getUserOrders:'/api/v1/orders/',
     getUserOrdersByUserId:'/api/v1/orders/user/'

@@ -1,7 +1,8 @@
 import { Product } from './../../Models/product';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, count } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject, Observable, count, retry } from 'rxjs';
 import { Apis, Constants } from 'src/app/Global/Global';
 import { ShippingAddress } from 'src/app/Models/ShippingAddress';
 import { Cart } from 'src/app/Models/cart';
@@ -12,7 +13,6 @@ import { Cart } from 'src/app/Models/cart';
 export class CartService {
   baseURL = Constants.APIURL;
   totalNumofCartItems = new BehaviorSubject(0);
-
   constructor(private http:HttpClient) {
     this.getAllUserProduct().subscribe({
       next:(response)=>{
@@ -47,9 +47,9 @@ export class CartService {
   //#endregion
   //#region  payment
     checkOut(cartId:string|null,userInfo:ShippingAddress):Observable<any>{
-      return this.http.post<ShippingAddress>(this.baseURL+Apis.Payment.pay+cartId+Apis.Payment.redirctUrl,{
+      return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+Apis.Payment.redirctUrl,{
         shippingAddress:userInfo
-      });
+      }).pipe(retry(1));
     }
   //#endregion
   //#region  UserOrders
