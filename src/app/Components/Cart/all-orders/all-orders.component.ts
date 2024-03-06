@@ -1,6 +1,6 @@
 import { AuthService } from './../../LoginRegister/auth.service';
 import { Product } from 'src/app/Models/product';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../cart.service';
@@ -13,7 +13,7 @@ import { BehaviorSubject, retry } from 'rxjs';
   standalone:true,
   imports:[CommonModule]
 })
-export class AllOrdersComponent implements OnInit ,AfterViewInit{
+export class AllOrdersComponent implements OnInit {
   userId:string|null ='';
   orders:any[]=[];
   gitBaseUrl ="https://wesamkhaledmorsy.github.io/E-commerce-WKM/"
@@ -28,14 +28,8 @@ export class AllOrdersComponent implements OnInit ,AfterViewInit{
 
     this.allUserOrders();
   }
-  ngAfterViewInit(): void {
-    this.redirectPageUrl('allorders');
-  }
-   redirectPageUrl(pageName:string){
-    if (window.location.origin == this.localBaseUrl ) {
-        window.location.href = this.gitBaseUrl+`${pageName}`;
-    }
-  }
+
+
   allUserOrders(){
     this._CartS.AllUserOrders(this.userId).subscribe({
       next:(response)=>{

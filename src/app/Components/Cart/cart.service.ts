@@ -47,9 +47,9 @@ export class CartService {
   //#endregion
   //#region  payment
     checkOut(cartId:string|null,userInfo:ShippingAddress):Observable<any>{
-      return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+Apis.Payment.redirctUrl,{
+      return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+`${window.location.origin}`,{
         shippingAddress:userInfo
-      }).pipe(retry(1));
+      });
     }
   //#endregion
   //#region  UserOrders
