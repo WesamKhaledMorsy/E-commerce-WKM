@@ -8,10 +8,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class FooterComponent {
   currentYear= new Date().getFullYear();
-  Copied : string = '';
-    url = window.location.href
+    url = 'https://wesamkhaledmorsy.github.io/E-commerce-WKM/';
 constructor(private toaster:ToastrService){}
   copyToClipboard(item:any) {
+    console.log(this.url);
+
     document.addEventListener('copy', (e: ClipboardEvent) => {
       e.clipboardData?.setData('text/plain', (item));
       e.preventDefault();
