@@ -46,8 +46,24 @@ export class CartService {
     }
   //#endregion
   //#region  payment
+//   href
+// :
+// window.location.href
+// origin
+// :
+// "http://localhost:4200"
+// pathname
+// :
+// "/allorders"
     checkOut(cartId:string|null,userInfo:ShippingAddress):Observable<any>{
-      return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+`${window.location.origin}`,{
+      let url = '';
+      if(window.location.origin ==="https://wesamkhaledmorsy.github.io/"){
+        url = "https://wesamkhaledmorsy.github.io/E-commerce-WKM/"
+      }else{
+        url = "http://localhost:4200";
+        console.log(url);
+      }
+      return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+`${url}`,{
         shippingAddress:userInfo
       });
     }

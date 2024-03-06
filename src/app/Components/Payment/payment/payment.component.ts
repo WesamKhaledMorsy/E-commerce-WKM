@@ -31,6 +31,14 @@ export class PaymentComponent implements OnInit {
   }
   handlePayment():void{
     const orderData= this.orderForm.value;
+    // let url = '';
+    // if(window.location.origin ==="https://wesamkhaledmorsy.github.io/"){
+    //   window.location.href = window.location.origin +'E-commerce-WKM/allorders'
+    //   url = window.location.href ;
+    // }else{
+    //   window.location.href = "http://localhost:4200/allorders";
+    //   url = window.location.href ;
+    // }
     this._CartS.checkOut(this.cartID ,orderData).subscribe({
       next:(response:any)=>{
         if(response.status === 'success'){
