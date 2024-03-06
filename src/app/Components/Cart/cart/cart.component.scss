@@ -3,4 +3,15 @@
   border: none;
   border-radius: 15px;
   min-height: 200px;
+
+  @media screen and (max-width:768px) {
+    #decrement , #increment{
+      padding: 5px;
+      margin: 2rem;
+    }
+    #add-minus{
+      margin-top: 1rem;
+    }
+  }
+
 }
