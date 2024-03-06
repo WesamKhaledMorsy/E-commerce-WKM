@@ -60,7 +60,7 @@ export class CartService {
     checkOut(cartId:string|null,userInfo:ShippingAddress):Observable<any>{
 
       if(this.url ==='https://wesamkhaledmorsy.github.io'){
-        this.url = 'https://wesamkhaledmorsy.github.io/E-commerce-WKM/'
+        this.url = 'https://wesamkhaledmorsy.github.io/E-commerce-WKM'
       }else{
         this.url = 'http://localhost:4200';
         console.log(this.url);
