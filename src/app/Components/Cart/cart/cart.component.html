@@ -10,7 +10,7 @@
       </div>
       <div class="col-md d-flex justify-content-between">
         <div class="my-2">
-          <h3 class="h6">{{pr?.product.title| seemoreHome:5 }}</h3>
+          <h3 class="h6">{{pr?.product.title| seemoreHome:3 }}</h3>
           <p class="category">Price: {{pr.price | currency : 'EGP'}}</p>
           <span class="text-danger cursor-pointer p-2 border border-1 rounded-3 border-danger" (click)="removeItem(pr.product._id)">
             <i class="fa-solid fa-trash"></i>
