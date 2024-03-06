@@ -25,12 +25,8 @@ $whiteColor:#fff;
   }
   .product-card {
     padding: 0.1rem;
-    max-height: 620px;
     transition: all 1s;
     &:hover {
-      // border: solid 1px rgba(148, 229, 148, 0.867);
-      // box-shadow: rgba(56, 201, 104, 0.734) 0px 8px 24px;
-
         box-shadow:
           rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
           rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
