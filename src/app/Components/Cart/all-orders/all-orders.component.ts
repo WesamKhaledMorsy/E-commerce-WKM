@@ -32,7 +32,7 @@ export class AllOrdersComponent implements OnInit ,AfterViewInit{
     this.redirectPageUrl('allorders');
   }
    redirectPageUrl(pageName:string){
-    if (window.location.origin !== this.localBaseUrl ) {
+    if (window.location.origin == this.localBaseUrl ) {
         window.location.href = this.gitBaseUrl+`${pageName}`;
     }
   }
