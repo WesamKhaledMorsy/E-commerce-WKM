@@ -57,10 +57,10 @@ export class CartService {
 // "/allorders"
     checkOut(cartId:string|null,userInfo:ShippingAddress):Observable<any>{
       let url = '';
-      if(window.location.origin ==="https://wesamkhaledmorsy.github.io/"){
-        url = "https://wesamkhaledmorsy.github.io/E-commerce-WKM/"
+      if(window.location.origin ==='https://wesamkhaledmorsy.github.io'){
+        url = 'https://wesamkhaledmorsy.github.io/E-commerce-WKM/'
       }else{
-        url = "http://localhost:4200";
+        url = 'http://localhost:4200';
         console.log(url);
       }
       return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+`${url}`,{
