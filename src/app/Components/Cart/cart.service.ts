@@ -11,9 +11,11 @@ import { Cart } from 'src/app/Models/cart';
   providedIn: 'root'
 })
 export class CartService {
+  url = '';
   baseURL = Constants.APIURL;
   totalNumofCartItems = new BehaviorSubject(0);
   constructor(private http:HttpClient) {
+    this.url = window.location.origin;
     this.getAllUserProduct().subscribe({
       next:(response)=>{
         this.totalNumofCartItems.next(response.numOfCartItems);
@@ -56,14 +58,14 @@ export class CartService {
 // :
 // "/allorders"
     checkOut(cartId:string|null,userInfo:ShippingAddress):Observable<any>{
-      let url = '';
-      if(window.location.origin ==='https://wesamkhaledmorsy.github.io'){
-        url = 'https://wesamkhaledmorsy.github.io/E-commerce-WKM/'
+
+      if(this.url ==='https://wesamkhaledmorsy.github.io'){
+        this.url = 'https://wesamkhaledmorsy.github.io/E-commerce-WKM/'
       }else{
-        url = 'http://localhost:4200';
-        console.log(url);
+        this.url = 'http://localhost:4200';
+        console.log(this.url);
       }
-      return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+`${url}`,{
+      return this.http.post<any>(this.baseURL+Apis.Payment.pay+cartId+'?url='+`${this.url}`,{
         shippingAddress:userInfo
       });
     }
