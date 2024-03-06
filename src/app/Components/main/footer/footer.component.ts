@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 export class FooterComponent {
   currentYear= new Date().getFullYear();
   Copied : string = '';
-    url = document.location.origin
+    url = document.location.href
 constructor(private toaster:ToastrService){}
   copyToClipboard(item:any) {
     document.addEventListener('copy', (e: ClipboardEvent) => {
