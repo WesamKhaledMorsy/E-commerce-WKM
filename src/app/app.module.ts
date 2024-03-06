@@ -15,7 +15,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MainsliderComponent } from './Components/main/mainslider/mainslider.component';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { SeemoreHomePipe } from './pipes/seemore-home.pipe';
 import { SearchHomePipe } from './pipes/search-home.pipe';
 import { CartComponent } from './Components/Cart/cart/cart.component';
@@ -73,7 +73,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
       useClass: LoadingInterceptor,
       multi: true
     },
-
+    provideToastr({
+      timeOut: 10000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    })
   ],
   bootstrap: [AppComponent]
 })
